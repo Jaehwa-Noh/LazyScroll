@@ -1,8 +1,34 @@
+import org.jetbrains.kotlin.daemon.client.KotlinCompilerClient
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.secrets)
+    `maven-publish`
+}
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "starlight.jaehwa"
+            artifactId = "lazy-scroll"
+            version = "0.0.1"
+
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            credentials {
+                username = project.findProperty("maven_username") as String? ?: System.getenv("maven_username")
+                password = project.findProperty("maven_password") as String? ?: System.getenv("maven_password")
+            }
+        }
+    }
 }
 
 secrets {
