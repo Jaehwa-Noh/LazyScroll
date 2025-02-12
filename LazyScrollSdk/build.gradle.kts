@@ -1,3 +1,4 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 import org.jetbrains.kotlin.daemon.client.KotlinCompilerClient
 
 plugins {
@@ -24,8 +25,8 @@ publishing {
     repositories {
         maven {
             credentials {
-                username = project.findProperty("maven_username") as String? ?: System.getenv("maven_username")
-                password = project.findProperty("maven_password") as String? ?: System.getenv("maven_password")
+                username = gradleLocalProperties(rootDir, providers).getProperty("maven_username")
+                password = gradleLocalProperties(rootDir, providers).getProperty("maven_password")
             }
         }
     }
