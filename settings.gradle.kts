@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "LazyScroll"
 include(":app")
+include(":LazyScrollSdk")
