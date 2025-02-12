@@ -41,6 +41,10 @@ android {
     namespace = "starlightlab.jaehwa.lazyscrollsdk"
     compileSdk = 35
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     defaultConfig {
         minSdk = 21
 
