@@ -11,6 +11,10 @@ android {
     defaultConfig {
         minSdk = 21
 
+        aarMetadata {
+            minCompileSdk = 21
+        }
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
