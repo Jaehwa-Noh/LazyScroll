@@ -12,7 +12,7 @@ plugins {
 publishing {
     publications {
         register<MavenPublication>("release") {
-            groupId = "starlight.jaehwa"
+            groupId = "io.github.jaehwa-noh"
             artifactId = "lazy-scroll"
             version = "0.0.1"
 
