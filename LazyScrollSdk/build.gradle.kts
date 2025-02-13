@@ -17,6 +17,8 @@ publishing {
             version = "0.0.1"
 
             pom {
+                url = "https://github.com/Jaehwa-Noh/LazyScroll"
+
                 licenses {
                     license {
                         name = "The Apache License, Version 2.0"
