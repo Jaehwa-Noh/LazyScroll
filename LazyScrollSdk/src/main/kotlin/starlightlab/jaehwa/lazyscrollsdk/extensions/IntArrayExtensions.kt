@@ -1,6 +1,6 @@
 package starlightlab.jaehwa.lazyscrollsdk.extensions
 
-fun IntArray.sumRange(start: Int = 0, until: Int): Int {
+internal fun IntArray.sumRange(start: Int = 0, until: Int): Int {
     if (this.isEmpty()) {
         return 0
     }
