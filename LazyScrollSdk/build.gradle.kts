@@ -54,6 +54,12 @@ android {
     namespace = "starlightlab.jaehwa.lazyscrollsdk"
     compileSdk = 35
 
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
+
     buildFeatures {
         buildConfig = true
     }
