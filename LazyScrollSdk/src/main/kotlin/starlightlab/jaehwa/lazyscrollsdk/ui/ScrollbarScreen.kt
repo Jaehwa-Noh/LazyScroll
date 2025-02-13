@@ -7,6 +7,7 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.gestures.scrollBy
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.lazy.LazyListState
@@ -158,26 +159,47 @@ fun ScrollbarScreen(
             )
         ),
     ) {
-        Row(modifier = modifier) {
-            Spacer(modifier = Modifier.weight(0.96f))
-            Box(modifier = Modifier.weight(0.04f)) {
-                ScrollbarTrack()
-                ScrollbarThumb(
-                    offset = thumbOffsetState,
-                    height = thumbSizeState,
-                    viewportSize = viewportSizeState,
-                    orientation = orientationState,
-                    onDrag = { delta ->
-                        thumbOffsetState += delta
+        if (orientationState == Orientation.Vertical) {
+            Row(modifier = modifier) {
+                Spacer(modifier = Modifier.weight(0.96f))
+                Box(modifier = Modifier.weight(0.04f)) {
+                    ScrollbarTrack()
+                    ScrollbarThumb(
+                        offset = thumbOffsetState,
+                        height = thumbSizeState,
+                        viewportSize = viewportSizeState,
+                        orientation = orientationState,
+                        onDrag = { delta ->
+                            thumbOffsetState += delta
 
-                        coroutineScope.launch {
-                            lazyListState.scrollBy(delta * totalSizeState.toFloat() / viewportSizeState.toFloat())
-                        }
-                    },
-                )
+                            coroutineScope.launch {
+                                lazyListState.scrollBy(delta * totalSizeState.toFloat() / viewportSizeState.toFloat())
+                            }
+                        },
+                    )
+                }
+            }
+        } else {
+            Column(modifier = modifier) {
+                Spacer(modifier = Modifier.weight(0.96f))
+                Box(modifier = Modifier.weight(0.04f)) {
+                    ScrollbarTrack()
+                    ScrollbarThumb(
+                        offset = thumbOffsetState,
+                        height = thumbSizeState,
+                        viewportSize = viewportSizeState,
+                        orientation = orientationState,
+                        onDrag = { delta ->
+                            thumbOffsetState += delta
+
+                            coroutineScope.launch {
+                                lazyListState.scrollBy(delta * totalSizeState.toFloat() / viewportSizeState.toFloat())
+                            }
+                        },
+                    )
+                }
             }
         }
     }
 
 }
-
