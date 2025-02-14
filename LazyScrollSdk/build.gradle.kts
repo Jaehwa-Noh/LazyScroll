@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.secrets)
     `maven-publish`
+    signing
 }
 
 publishing {
@@ -40,9 +41,8 @@ publishing {
                 password = gradleLocalProperties(rootDir, providers).getProperty("maven_password")
             }
 
-            url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
-        }
-    }
+signing {
+    sign(publishing.publications)
 }
 
 secrets {
