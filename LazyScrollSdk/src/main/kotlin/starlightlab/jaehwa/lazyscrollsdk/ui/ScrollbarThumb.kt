@@ -4,8 +4,10 @@ import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.gestures.draggable
 import androidx.compose.foundation.gestures.rememberDraggableState
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -18,7 +20,7 @@ import androidx.compose.ui.unit.dp
 /**
  * Actual Thumb
  *
- * @param height height of a thumb
+ * @param size size of a thumb
  * @param offset offset of thumb in the screen.
  * @param viewportSize lazy composable screen size.
  * @param orientation orientation of a lazy composable scroll direction
@@ -27,7 +29,7 @@ import androidx.compose.ui.unit.dp
  */
 @Composable
 internal fun ScrollbarThumb(
-    height: Float,
+    size: Float,
     offset: Float,
     viewportSize: Int,
     orientation: Orientation,
@@ -36,7 +38,7 @@ internal fun ScrollbarThumb(
 ) {
 
     val trackThumbColor = MaterialTheme.colorScheme.primary
-    val thumbSizePx = with(LocalDensity.current) { height.dp.toPx() }
+    val thumbSizePx = with(LocalDensity.current) { size.dp.toPx() }
     Box(
         modifier = modifier
             .graphicsLayer {

@@ -103,7 +103,6 @@ fun LazyScrollbarScreen(
                 }.forEach {
                     totalItemInfoState[it.index] = it.size
                 }
-
                 totalSizeState = totalItemInfoState.sum()
                 thumbSizeState =
                     if (totalSizeState <= viewportSizeState) viewportSizeState.toFloat()
@@ -166,7 +165,7 @@ fun LazyScrollbarScreen(
                     ScrollbarTrack()
                     ScrollbarThumb(
                         offset = thumbOffsetState,
-                        height = thumbSizeState,
+                        size = thumbSizeState,
                         viewportSize = viewportSizeState,
                         orientation = orientationState,
                         onDrag = { delta ->
@@ -188,7 +187,7 @@ fun LazyScrollbarScreen(
                     ScrollbarTrack()
                     ScrollbarThumb(
                         offset = thumbOffsetState,
-                        height = thumbSizeState,
+                        size = thumbSizeState,
                         viewportSize = viewportSizeState,
                         orientation = orientationState,
                         onDrag = { delta ->
