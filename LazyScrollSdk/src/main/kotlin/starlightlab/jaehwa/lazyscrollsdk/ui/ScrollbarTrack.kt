@@ -13,7 +13,7 @@ import androidx.compose.ui.draw.drawBehind
  * @param modifier modify this screen.
  */
 @Composable
-fun ScrollbarTrack(
+internal fun ScrollbarTrack(
     modifier: Modifier = Modifier,
 ) {
     val trackColor = MaterialTheme.colorScheme.surfaceVariant

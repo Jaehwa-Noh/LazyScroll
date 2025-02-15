@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.dp
  * @param modifier modify this screen.
  */
 @Composable
-fun ScrollbarThumb(
+internal fun ScrollbarThumb(
     height: Float,
     offset: Float,
     viewportSize: Int,
