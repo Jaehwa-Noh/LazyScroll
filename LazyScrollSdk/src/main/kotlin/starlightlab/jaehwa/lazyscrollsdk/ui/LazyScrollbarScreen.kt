@@ -41,7 +41,7 @@ import starlightlab.jaehwa.lazyscrollsdk.extensions.sumRange
  * @param modifier Modify this screen.
  */
 @Composable
-fun ScrollbarScreen(
+fun LazyScrollbarScreen(
     modifier: Modifier = Modifier,
     lazyListState: LazyListState = rememberLazyListState(),
     coroutineScope: CoroutineScope = rememberCoroutineScope(),
