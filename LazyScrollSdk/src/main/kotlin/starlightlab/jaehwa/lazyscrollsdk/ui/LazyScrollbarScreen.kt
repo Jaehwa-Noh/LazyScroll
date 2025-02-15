@@ -170,10 +170,12 @@ fun LazyScrollbarScreen(
                         viewportSize = viewportSizeState,
                         orientation = orientationState,
                         onDrag = { delta ->
-                            thumbOffsetState += delta
+                            val movePercent = delta / (viewportSizeState - thumbSizePx)
+                            val totalSize = (totalSizeState.toFloat() - viewportSizeState)
+                            val scrollTo = totalSize * movePercent
 
                             coroutineScope.launch {
-                                lazyListState.scrollBy(delta * totalSizeState.toFloat() / viewportSizeState.toFloat())
+                                lazyListState.scrollBy(scrollTo)
                             }
                         },
                     )
@@ -190,10 +192,12 @@ fun LazyScrollbarScreen(
                         viewportSize = viewportSizeState,
                         orientation = orientationState,
                         onDrag = { delta ->
-                            thumbOffsetState += delta
+                            val movePercent = delta / (viewportSizeState - thumbSizePx)
+                            val totalSize = (totalSizeState.toFloat() - viewportSizeState)
+                            val scrollTo = totalSize * movePercent
 
                             coroutineScope.launch {
-                                lazyListState.scrollBy(delta * totalSizeState.toFloat() / viewportSizeState.toFloat())
+                                lazyListState.scrollBy(scrollTo)
                             }
                         },
                     )
