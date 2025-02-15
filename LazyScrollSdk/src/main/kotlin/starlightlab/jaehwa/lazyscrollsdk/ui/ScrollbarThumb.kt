@@ -47,7 +47,8 @@ internal fun ScrollbarThumb(
                     else -> Float.NaN
                 }
 
-                if (orientation == Orientation.Vertical) translationY = offsetFloat else translationX = offsetFloat
+                if (orientation == Orientation.Vertical) translationY =
+                    offsetFloat else translationX = offsetFloat
             }
             .fillMaxWidth()
             .height(height.dp)
@@ -58,22 +59,8 @@ internal fun ScrollbarThumb(
                 )
             }
             .draggable(
-                orientation = Orientation.Vertical,
-                state = rememberDraggableState { delta ->
-
-                    when {
-                        offset <= 0f -> {
-                            if (delta >= 0) onDrag(delta)
-                        }
-
-                        offset > 0f && offset < viewportSize - thumbSizePx -> onDrag(delta)
-                        offset >= viewportSize - thumbSizePx -> {
-                            if (delta <= 0) onDrag(delta)
-                        }
-
-                        else -> {}
-                    }
-                },
-            )
-    )
+                orientation = orientation,
+                state = rememberDraggableState(onDrag)
+            ),
+        )
 }
