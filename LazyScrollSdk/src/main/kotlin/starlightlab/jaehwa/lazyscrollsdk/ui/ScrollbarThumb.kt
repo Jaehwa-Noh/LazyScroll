@@ -51,9 +51,15 @@ internal fun ScrollbarThumb(
 
                 if (orientation == Orientation.Vertical) translationY =
                     offsetFloat else translationX = offsetFloat
-            }
-            .fillMaxWidth()
-            .height(height.dp)
+            }.then(
+                if (orientation == Orientation.Vertical) {
+                    Modifier.fillMaxWidth()
+                        .height(size.dp)
+                } else {
+                    Modifier.fillMaxHeight()
+                        .width(size.dp)
+                }
+            )
             .drawBehind {
                 drawRoundRect(
                     trackThumbColor,
