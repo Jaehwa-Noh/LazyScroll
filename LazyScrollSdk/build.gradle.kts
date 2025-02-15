@@ -24,7 +24,7 @@ mavenPublishing {
     coordinates(
         groupId = "io.github.jaehwa-noh",
         artifactId = "lazy-scroll",
-        version = "0.0.2"
+        version = "0.0.3-beta"
     )
 
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
