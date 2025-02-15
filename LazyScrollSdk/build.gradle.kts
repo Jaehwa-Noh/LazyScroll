@@ -5,7 +5,6 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.secrets)
     id("com.vanniktech.maven.publish") version "0.30.0"
     signing
 }
@@ -62,11 +61,6 @@ mavenPublishing {
 
 signing {
     sign(publishing.publications)
-}
-
-secrets {
-    propertiesFileName = "secrets.properties"
-    defaultPropertiesFileName = "local.properties"
 }
 
 android {
