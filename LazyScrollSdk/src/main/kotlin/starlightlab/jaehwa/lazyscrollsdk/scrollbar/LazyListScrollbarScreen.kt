@@ -1,4 +1,4 @@
-package starlightlab.jaehwa.lazyscrollsdk.ui
+package starlightlab.jaehwa.lazyscrollsdk.scrollbar
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
