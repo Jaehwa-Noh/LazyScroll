@@ -5,10 +5,13 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.gestures.Orientation
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawing
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.LazyRow
@@ -43,7 +46,10 @@ fun ScreenForTesting(
     orientation: Orientation,
     modifier: Modifier = Modifier,
 ) {
-    LazyListScrollbarHost(modifier = modifier) { lazyListState ->
+    LazyListScrollbarHost(
+        modifier = modifier
+            .windowInsetsPadding(WindowInsets.safeDrawing)
+    ) { lazyListState ->
         if (orientation == Orientation.Vertical) {
             LazyColumn(
                 state = lazyListState,
