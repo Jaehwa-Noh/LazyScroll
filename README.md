@@ -73,6 +73,13 @@ fun Greeting(modifier: Modifier = Modifier) {
 }
 ```
 
+### Demo video
+#### Vertical
+https://github.com/user-attachments/assets/c9b06f44-bee1-4db4-8017-e918cda7e92b
+
+#### Horizontal
+https://github.com/user-attachments/assets/ce012d2f-c216-43f5-a3f6-0d3d2fb42f16
+
 ### Spec
 Support minSdkVersion >= 21  
 Always good to use latest Compose version
@@ -115,7 +122,7 @@ dependencyResolutionManagement {
 }
 ```
 
-(module) build.gradle.kts
+(모듈) build.gradle.kts
 ```kotlin dsl
 dependencies {
     implementation("io.github.jaehwa-noh:lazy-scroll:0.0.3-beta")
@@ -160,6 +167,13 @@ fun Greeting(modifier: Modifier = Modifier) {
     }
 }
 ```
+
+### 시연 영상
+#### 세로 방향
+https://github.com/user-attachments/assets/c9b06f44-bee1-4db4-8017-e918cda7e92b
+
+#### 가로 방향
+https://github.com/user-attachments/assets/ce012d2f-c216-43f5-a3f6-0d3d2fb42f16
 
 ### 스펙
 최소 SDK 버전 >= 21 지원  
