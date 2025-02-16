@@ -1,4 +1,4 @@
-package starlightlab.jaehwa.lazyscrollsdk.ui
+package starlightlab.jaehwa.lazyscrollsdk.scrollbar
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
@@ -33,6 +33,8 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.launch
 import starlightlab.jaehwa.lazyscrollsdk.extensions.sumRange
+import starlightlab.jaehwa.lazyscrollsdk.ui.common.ScrollbarThumb
+import starlightlab.jaehwa.lazyscrollsdk.ui.common.ScrollbarTrack
 
 /**
  * Scrollbar with [LazyListState].
@@ -41,7 +43,7 @@ import starlightlab.jaehwa.lazyscrollsdk.extensions.sumRange
  * @param modifier Modify this screen.
  */
 @Composable
-fun LazyListScrollbarScreen(
+internal fun LazyListScrollbarScreen(
     modifier: Modifier = Modifier,
     lazyListState: LazyListState = rememberLazyListState(),
     coroutineScope: CoroutineScope = rememberCoroutineScope(),
