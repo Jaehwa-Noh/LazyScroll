@@ -51,12 +51,14 @@ class MainActivity : ComponentActivity() {
 fun Greeting(modifier: Modifier = Modifier) {
     val lazyListState = rememberLazyListState()
     Box(modifier = modifier) {
-        LazyColumn(state = lazyListState) { 
+        LazyColumn(state = lazyListState) {
             for (index in 0..100) {
                 item {
                     Text(
                         text = "Hello $index!",
-                        modifier = modifier
+                        modifier = Modifier
+                            .padding(16.dp)
+                            .fillMaxWidth()
                     )
                 }
             }
@@ -112,7 +114,7 @@ dependencies {
 }
 ```
 
-In the code
+코드에서.
 ```kotlin
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -134,12 +136,14 @@ class MainActivity : ComponentActivity() {
 fun Greeting(modifier: Modifier = Modifier) {
     val lazyListState = rememberLazyListState()
     Box(modifier = modifier) {
-        LazyColumn(state = lazyListState) { 
+        LazyColumn(state = lazyListState) {
             for (index in 0..100) {
                 item {
                     Text(
                         text = "Hello $index!",
-                        modifier = modifier
+                        modifier = Modifier
+                            .padding(16.dp)
+                            .fillMaxWidth()
                     )
                 }
             }
