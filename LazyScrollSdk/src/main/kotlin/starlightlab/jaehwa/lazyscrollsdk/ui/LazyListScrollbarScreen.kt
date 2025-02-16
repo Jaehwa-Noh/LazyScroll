@@ -33,6 +33,8 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.launch
 import starlightlab.jaehwa.lazyscrollsdk.extensions.sumRange
+import starlightlab.jaehwa.lazyscrollsdk.ui.common.ScrollbarThumb
+import starlightlab.jaehwa.lazyscrollsdk.ui.common.ScrollbarTrack
 
 /**
  * Scrollbar with [LazyListState].

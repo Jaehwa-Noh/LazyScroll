@@ -1,4 +1,4 @@
-package starlightlab.jaehwa.lazyscrollsdk.ui
+package starlightlab.jaehwa.lazyscrollsdk.ui.common
 
 import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.gestures.draggable
