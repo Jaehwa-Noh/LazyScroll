@@ -10,6 +10,12 @@ plugins {
 }
 
 mavenPublishing {
+    coordinates(
+        groupId = "io.github.jaehwa-noh",
+        artifactId = "lazy-scroll",
+        version = "1.0.0-rc01"
+    )
+
     configure(
         AndroidSingleVariantLibrary(
             // the published variant
@@ -19,12 +25,6 @@ mavenPublishing {
             // whether to publish a javadoc jar
             publishJavadocJar = true,
         )
-    )
-
-    coordinates(
-        groupId = "io.github.jaehwa-noh",
-        artifactId = "lazy-scroll",
-        version = "0.0.3-beta"
     )
 
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
