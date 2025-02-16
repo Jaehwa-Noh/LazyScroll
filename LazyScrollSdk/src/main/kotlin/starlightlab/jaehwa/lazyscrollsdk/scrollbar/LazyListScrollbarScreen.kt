@@ -43,7 +43,7 @@ import starlightlab.jaehwa.lazyscrollsdk.ui.common.ScrollbarTrack
  * @param modifier Modify this screen.
  */
 @Composable
-internal fun LazyListScrollbar(
+internal fun LazyListScrollbarScreen(
     modifier: Modifier = Modifier,
     lazyListState: LazyListState = rememberLazyListState(),
     coroutineScope: CoroutineScope = rememberCoroutineScope(),
