@@ -30,7 +30,7 @@ dependencyResolutionManagement {
 (module) build.gradle.kts
 ```kotlin dsl
 dependencies {
-    implementation("io.github.jaehwa-noh:lazy-scroll:0.0.3-beta")
+    implementation("io.github.jaehwa-noh:lazy-scroll:1.0.0")
 }
 ```
 
@@ -54,8 +54,10 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(modifier: Modifier = Modifier) {
-    val lazyListState = rememberLazyListState()
-    Box(modifier = modifier) {
+    LazyListScrollbarHost(modifier = modifier) { lazyListState ->
+        // If you need a horizontal scrollbar use LazyRow.
+        // LazyRow(state = lazyListState) { }
+        
         LazyColumn(state = lazyListState) {
             for (index in 0..100) {
                 item {
@@ -68,9 +70,9 @@ fun Greeting(modifier: Modifier = Modifier) {
                 }
             }
         }
-        LazyScrollbarScreen(lazyListState = lazyListState)
     }
 }
+
 ```
 
 ### Demo video
@@ -125,7 +127,7 @@ dependencyResolutionManagement {
 (모듈) build.gradle.kts
 ```kotlin dsl
 dependencies {
-    implementation("io.github.jaehwa-noh:lazy-scroll:0.0.3-beta")
+    implementation("io.github.jaehwa-noh:lazy-scroll:1.0.0")
 }
 ```
 
@@ -149,8 +151,10 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(modifier: Modifier = Modifier) {
-    val lazyListState = rememberLazyListState()
-    Box(modifier = modifier) {
+    LazyListScrollbarHost(modifier = modifier) { lazyListState ->
+        // 가로가 필요하면 LazyRow를 사용하세요.
+        // LazyRow(state = lazyListState) { }
+        
         LazyColumn(state = lazyListState) {
             for (index in 0..100) {
                 item {
@@ -163,7 +167,6 @@ fun Greeting(modifier: Modifier = Modifier) {
                 }
             }
         }
-        LazyScrollbarScreen(lazyListState = lazyListState)
     }
 }
 ```
