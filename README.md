@@ -1,10 +1,5 @@
 # LazyScroll
 Compose doesn't support scrollbar on lazy composables now days.   
-https://developer.android.com/jetpack/androidx/compose-roadmap#core-libraries
-![image](https://github.com/user-attachments/assets/fb45f948-c877-42f9-a21c-6fef1fd69008)
-
-
-
 So that I made scrollbar for that composables.   
 Enjoy your lazy composables with my scrollbar SDK.
 
@@ -92,9 +87,6 @@ ___
 
 # 레이지스크롤
 컴포즈는 현재 스크롤바를 지원하지 않습니다.   
-https://developer.android.com/jetpack/androidx/compose-roadmap#core-libraries
-![image](https://github.com/user-attachments/assets/e4b2ec39-c7c1-45aa-be9c-62620f498d02)
-
 그래서 만들었습니다.   
 당신의 레이지 컴포저블을 제 스크롤바 SDK로 편하게 사용하세요.
 
