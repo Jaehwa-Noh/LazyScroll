@@ -14,4 +14,4 @@ jobs:
               uses: pozil/auto-assign-issue@v2
               with:
                   assignees: Jaehwa-Noh
-                  allowSelfAssign: false
+                  allowSelfAssign: true
