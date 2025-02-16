@@ -13,7 +13,7 @@ mavenPublishing {
     coordinates(
         groupId = "io.github.jaehwa-noh",
         artifactId = "lazy-scroll",
-        version = "1.0.0-rc01"
+        version = "1.0.0"
     )
 
     configure(
