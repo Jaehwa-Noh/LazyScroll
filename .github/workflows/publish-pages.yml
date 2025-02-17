@@ -1,6 +1,7 @@
 name: Build and Deploy
-on:
-  [push]
+push:
+  branches:
+    - main
 jobs:
   deploy:
     concurrency: ci-${{ github.ref }}
