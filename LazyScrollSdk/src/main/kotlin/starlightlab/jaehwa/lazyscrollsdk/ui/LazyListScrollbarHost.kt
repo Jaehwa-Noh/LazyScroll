@@ -17,6 +17,9 @@ import starlightlab.jaehwa.lazyscrollsdk.scrollbar.LazyListScrollbarScreen
  * @param lazyListState LazyListState for sharing state with [content] and [LazyListScrollbarScreen] both.
  * @param content This will be lazy composable: [LazyColumn] or [LazyRow].
  * @param modifier Modify [LazyListScrollbarHost].
+ *
+ * @sample starlightlab.jaehwa.lazyscrollsdk.samples.LazyColumnSample
+ * @sample starlightlab.jaehwa.lazyscrollsdk.samples.LazyRowSample
  */
 @Composable
 fun LazyListScrollbarHost(
@@ -30,3 +33,4 @@ fun LazyListScrollbarHost(
     }
 
 }
+
