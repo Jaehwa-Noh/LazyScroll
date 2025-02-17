@@ -29,6 +29,6 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: ~/LazyScroll/LazyScrollSdk/build/dokka
+          folder: LazyScrollSdk/build/dokka
           clean: true
           ssh-key: ${{ secrets.DEPLOY_KEY }}
