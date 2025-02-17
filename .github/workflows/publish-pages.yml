@@ -1,9 +1,7 @@
 name: Build and Deploy
-on:
-  push:
-    branches:
-      - main
-    pull_request:
+push:
+  branches:
+    - main
 jobs:
   deploy:
     concurrency: ci-${{ github.ref }}
@@ -32,6 +30,6 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: build/dokka/html
+          folder: LazyScrollSdk/build/dokka
           clean: true
           ssh-key: ${{ secrets.DEPLOY_KEY }}
