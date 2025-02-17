@@ -87,6 +87,16 @@ Support minSdkVersion >= 21
 Always good to use latest Compose version
 
 
+## Roadmap
+
+| Composable                  | support |
+|-----------------------------|---------|
+| LazyColumn                  | &#x2705;|
+| LazyRow                     | &#x2705;|
+| LazyVerticalGrid            | Planed  |
+| LazyHorizontalGrid          | Planed  |
+| LazyVerticalStaggeredGrid   | Planed  |
+| LazyHorizontalStaggeredGrid | Planed  |
 
 ## Contribution
 Always welcome to your contribution.
@@ -182,6 +192,16 @@ https://github.com/user-attachments/assets/ce012d2f-c216-43f5-a3f6-0d3d2fb42f16
 최소 SDK 버전 >= 21 지원  
 언제나 최신 컴포즈 버전이 좋습니다.
 
+## 계획
+
+| 컴포저블                    | 지원    |
+|-----------------------------|---------|
+| LazyColumn                  | &#x2705;|
+| LazyRow                     | &#x2705;|
+| LazyVerticalGrid            | 계획    |
+| LazyHorizontalGrid          | 계획    |
+| LazyVerticalStaggeredGrid   | 계획    |
+| LazyHorizontalStaggeredGrid | 계획    |
 
 ## 기여
 당신의 기여는 언제나 환영합니다.
