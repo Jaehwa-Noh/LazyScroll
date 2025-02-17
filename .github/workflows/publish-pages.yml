@@ -23,7 +23,7 @@ jobs:
           cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
 
       - name: build dokka documentation
-        run: ./gradlew :LazyScrollSdk:dokkaHtml
+        run: ./gradlew :LazyScrollSdk:dokkaGeneratePublicationHtml
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
