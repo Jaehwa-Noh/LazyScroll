@@ -1,0 +1,5 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:starlightlab.jaehwa.lazyscrollsdk.ui////PointingToDeclaration/-lazy-scroll-sdk/starlightlab.jaehwa.lazyscrollsdk.ui/index.html
+$dokka.location:starlightlab.jaehwa.lazyscrollsdk.ui//LazyListScrollbarHost/#androidx.compose.ui.Modifier#androidx.compose.foundation.lazy.LazyListState#kotlin.Function1[androidx.compose.foundation.lazy.LazyListState,kotlin.Unit]/PointingToDeclaration/-lazy-scroll-sdk/starlightlab.jaehwa.lazyscrollsdk.ui/-lazy-list-scrollbar-host.html
+starlightlab.jaehwa.lazyscrollsdk.ui

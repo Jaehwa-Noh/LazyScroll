@@ -1,0 +1,1 @@
+sourceset_dependencies='{":LazyScrollSdk/debug":[],":LazyScrollSdk/main":[],":LazyScrollSdk/release":[]}'
