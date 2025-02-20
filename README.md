@@ -1,6 +1,7 @@
 [![KDoC](https://img.shields.io/badge/KDoc-7F52FF.svg?&style=for-the-badge&logo=kotlin&logoColor=white)](https://jaehwa-noh.github.io/LazyScroll/)
 [![Maven Central](https://img.shields.io/maven-central/v/io.github.jaehwa-noh/lazy-scroll?style=for-the-badge&logo=apache-maven&labelColor=C71A36
 )](https://central.sonatype.com/artifact/io.github.jaehwa-noh/lazy-scroll)
+[![javadoc](https://javadoc.io/badge2/io.github.jaehwa-noh/lazy-scroll/javadoc.svg?style=for-the-badge)](https://javadoc.io/doc/io.github.jaehwa-noh/lazy-scroll)
 
 # LazyScroll
 Compose doesn't support scrollbar on lazy composables now days.   
