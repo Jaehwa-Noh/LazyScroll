@@ -1,3 +1,18 @@
+/*
+    Copyright 2025 Jaehwa Noh
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/
 package starlightlab.jaehwa.lazyscrollsdk.ui.common
 
 import androidx.compose.foundation.gestures.Orientation
@@ -36,39 +51,44 @@ internal fun ScrollbarThumb(
     onDrag: (Float) -> Unit,
     modifier: Modifier = Modifier,
 ) {
-
     val trackThumbColor = MaterialTheme.colorScheme.primary
     val thumbSizePx = with(LocalDensity.current) { size.dp.toPx() }
     Box(
-        modifier = modifier
-            .graphicsLayer {
-                val offsetFloat = when {
-                    offset <= 0f -> 0f
-                    offset > 0f && offset < viewportSize - thumbSizePx -> offset
-                    offset >= viewportSize - thumbSizePx -> viewportSize - thumbSizePx
-                    else -> Float.NaN
-                }
+        modifier =
+            modifier
+                .graphicsLayer {
+                    val offsetFloat =
+                        when {
+                            offset <= 0f -> 0f
+                            offset > 0f && offset < viewportSize - thumbSizePx -> offset
+                            offset >= viewportSize - thumbSizePx -> viewportSize - thumbSizePx
+                            else -> Float.NaN
+                        }
 
-                if (orientation == Orientation.Vertical) translationY =
-                    offsetFloat else translationX = offsetFloat
-            }.then(
-                if (orientation == Orientation.Vertical) {
-                    Modifier.fillMaxWidth()
-                        .height(size.dp)
-                } else {
-                    Modifier.fillMaxHeight()
-                        .width(size.dp)
-                }
-            )
-            .drawBehind {
-                drawRoundRect(
-                    trackThumbColor,
-                    cornerRadius = CornerRadius(24f)
-                )
-            }
-            .draggable(
-                orientation = orientation,
-                state = rememberDraggableState(onDrag)
-            ),
-        )
+                    if (orientation == Orientation.Vertical) {
+                        translationY =
+                            offsetFloat
+                    } else {
+                        translationX = offsetFloat
+                    }
+                }.then(
+                    if (orientation == Orientation.Vertical) {
+                        Modifier
+                            .fillMaxWidth()
+                            .height(size.dp)
+                    } else {
+                        Modifier
+                            .fillMaxHeight()
+                            .width(size.dp)
+                    },
+                ).drawBehind {
+                    drawRoundRect(
+                        trackThumbColor,
+                        cornerRadius = CornerRadius(24f),
+                    )
+                }.draggable(
+                    orientation = orientation,
+                    state = rememberDraggableState(onDrag),
+                ),
+    )
 }
