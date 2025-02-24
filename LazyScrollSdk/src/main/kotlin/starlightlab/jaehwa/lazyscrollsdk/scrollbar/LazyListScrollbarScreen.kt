@@ -1,3 +1,18 @@
+/*
+    Copyright 2025 Jaehwa Noh
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/
 package starlightlab.jaehwa.lazyscrollsdk.scrollbar
 
 import androidx.compose.animation.AnimatedVisibility
@@ -69,10 +84,12 @@ internal fun LazyListScrollbarScreen(
             }.distinctUntilChanged(),
         ) { orientation, viewportSize ->
             orientationState = orientation
-            viewportSizeState = if (orientation == Orientation.Vertical)
-                viewportSize.height
-            else
-                viewportSize.width
+            viewportSizeState =
+                if (orientation == Orientation.Vertical) {
+                    viewportSize.height
+                } else {
+                    viewportSize.width
+                }
         }.collect()
     }
 
@@ -94,23 +111,28 @@ internal fun LazyListScrollbarScreen(
 
                 if (totalItemNumberState == 0) return@combine
                 if (isNeedAnUpdateState) {
-                    totalItemInfoState = IntArray(totalItemNumberState) {
-                        visibleItemInfo.getOrNull(0)?.size ?: 0
-                    }
+                    totalItemInfoState =
+                        IntArray(totalItemNumberState) {
+                            visibleItemInfo.getOrNull(0)?.size ?: 0
+                        }
                     isNeedAnUpdateState = false
                 }
 
-                visibleItemInfo.filter {
-                    totalItemInfoState[it.index] != it.size
-                }.forEach {
-                    totalItemInfoState[it.index] = it.size
-                }
+                visibleItemInfo
+                    .filter {
+                        totalItemInfoState[it.index] != it.size
+                    }.forEach {
+                        totalItemInfoState[it.index] = it.size
+                    }
                 totalSizeState = totalItemInfoState.sum()
                 thumbSizeState =
-                    if (totalSizeState <= viewportSizeState) viewportSizeState.toFloat()
-                    else (viewportSizeState.toFloat() / totalItemNumberState.toFloat()).coerceAtLeast(
-                        45f
-                    )
+                    if (totalSizeState <= viewportSizeState) {
+                        viewportSizeState.toFloat()
+                    } else {
+                        (viewportSizeState.toFloat() / totalItemNumberState.toFloat()).coerceAtLeast(
+                            45f,
+                        )
+                    }
             }.collect()
         }
     }
@@ -122,11 +144,16 @@ internal fun LazyListScrollbarScreen(
                     lazyListState.layoutInfo.visibleItemsInfo.lastIndex
                 }.distinctUntilChanged(),
                 snapshotFlow {
-                    lazyListState.layoutInfo.visibleItemsInfo.getOrNull(lazyListState.layoutInfo.visibleItemsInfo.lastIndex)?.offset
-                }.filterNotNull()
+                    lazyListState.layoutInfo.visibleItemsInfo
+                        .getOrNull(lazyListState.layoutInfo.visibleItemsInfo.lastIndex)
+                        ?.offset
+                }.filterNotNull(),
             ) { visibleItemsLastIndex, offset ->
                 if (visibleItemsLastIndex == -1) return@combine
-                val lastIndex = lazyListState.layoutInfo.visibleItemsInfo.lastOrNull()?.index ?: 0
+                val lastIndex =
+                    lazyListState.layoutInfo.visibleItemsInfo
+                        .lastOrNull()
+                        ?.index ?: 0
 
                 val sumRange = (lastIndex - 1).coerceAtLeast(0)
                 val lastItemSize = viewportSizeState - offset
@@ -136,7 +163,10 @@ internal fun LazyListScrollbarScreen(
                 val scrollEndRatio = 1f - (thumbSizePx / viewportSizeState)
 
                 thumbOffsetState =
-                    (currentPositionByWhole.toFloat() - viewportSizeState.toFloat()) / (totalSizeState.toFloat() - viewportSizeState.toFloat()) * scrollEndRatio * viewportSizeState
+                    (currentPositionByWhole.toFloat() - viewportSizeState.toFloat()) /
+                    (totalSizeState.toFloat() - viewportSizeState.toFloat()) *
+                    scrollEndRatio *
+                    viewportSizeState
             }.collect()
         }
     }
@@ -149,16 +179,20 @@ internal fun LazyListScrollbarScreen(
 
     AnimatedVisibility(
         visibilityState,
-        enter = fadeIn(
-            animationSpec = tween(
-                durationMillis = 1000,
-            )
-        ),
-        exit = fadeOut(
-            animationSpec = tween(
-                durationMillis = 1000,
-            )
-        ),
+        enter =
+            fadeIn(
+                animationSpec =
+                    tween(
+                        durationMillis = 1000,
+                    ),
+            ),
+        exit =
+            fadeOut(
+                animationSpec =
+                    tween(
+                        durationMillis = 1000,
+                    ),
+            ),
     ) {
         if (orientationState == Orientation.Vertical) {
             Row(modifier = modifier) {
@@ -206,5 +240,4 @@ internal fun LazyListScrollbarScreen(
             }
         }
     }
-
 }
