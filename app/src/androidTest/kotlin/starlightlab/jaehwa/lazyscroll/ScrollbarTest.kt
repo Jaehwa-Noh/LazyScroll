@@ -108,11 +108,10 @@ class ScrollbarTest {
 
         val lazyListComponent = composeTestRule.onNodeWithTag(LAZY_LIST_STATE_TEST_TAG)
         val thumbComponent = composeTestRule.onNodeWithTag(THUMB_TEST_TAG)
-        var scrollHeight: Int = 0
         lazyListComponent
             .performTouchInput {
-                swipe(Offset(centerX, bottom), Offset(centerX, bottom - 50), 5_000L)
-                scrollHeight = height
+                swipe(Offset(centerX, centerY), Offset(centerX, centerY - 500), 5_000L)
+                advanceEventTime(100L)
             }
 
         composeTestRule.waitUntil(5_000L) {
@@ -123,7 +122,7 @@ class ScrollbarTest {
             repeat(1000) {
                 thumbComponent.performTouchInput {
                     swipe(Offset(centerX, centerY), Offset(centerX, (centerY - 1000f)), 1000)
-                    advanceEventTime(1000L)
+                    advanceEventTime(100L)
                 }
             }
         } catch (_: AssertionError) {
