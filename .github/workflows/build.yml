@@ -133,7 +133,7 @@ jobs:
           disk-size: 6000M
           heap-size: 600M
           script: |
-            /usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell pm list packages -u | grep starlight.jaehwa.aboutsubnetmask* | cut -d':' -f2 | tr '\r' ' ' | xargs -r -n1 -t adb uninstall; ./gradlew :app:connectedDebugAndroidTest;
+            /usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell pm list packages -u | grep starlightlab.jaehwa.lazyscroll* | cut -d':' -f2 | tr '\r' ' ' | xargs -r -n1 -t adb uninstall; ./gradlew :app:connectedDebugAndroidTest;
 
       - name: Upload test reports
         if: ${{ !cancelled() }}
