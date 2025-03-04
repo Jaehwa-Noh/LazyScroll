@@ -41,22 +41,6 @@ dependencies {
 
 In the code
 ```kotlin
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            HowToUseTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
-        }
-    }
-}
-
 @Composable
 fun Greeting(modifier: Modifier = Modifier) {
     LazyListScrollbarHost(modifier = modifier) { lazyListState ->
@@ -148,22 +132,6 @@ dependencies {
 
 코드에서.
 ```kotlin
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            HowToUseTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
-        }
-    }
-}
-
 @Composable
 fun Greeting(modifier: Modifier = Modifier) {
     LazyListScrollbarHost(modifier = modifier) { lazyListState ->
