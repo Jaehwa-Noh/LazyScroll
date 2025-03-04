@@ -71,18 +71,20 @@ fun ScreenForTesting(
         if (orientation == Orientation.Vertical) {
             LazyColumn(
                 state = lazyListState,
-                modifier = Modifier
-                    .testTag(LAZY_LIST_STATE_TEST_TAG)
-                    .fillMaxWidth(),
+                modifier =
+                    Modifier
+                        .testTag(LAZY_LIST_STATE_TEST_TAG)
+                        .fillMaxWidth(),
             ) {
                 createItems()
             }
         } else {
             LazyRow(
                 state = lazyListState,
-                modifier = Modifier
-                    .testTag(LAZY_LIST_STATE_TEST_TAG)
-                    .fillMaxHeight(),
+                modifier =
+                    Modifier
+                        .testTag(LAZY_LIST_STATE_TEST_TAG)
+                        .fillMaxHeight(),
             ) {
                 createItems()
             }

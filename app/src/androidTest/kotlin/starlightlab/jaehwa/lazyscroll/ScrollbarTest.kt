@@ -21,22 +21,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.test.assertPositionInRootIsEqualTo
-import androidx.compose.ui.test.assertTopPositionInRootIsEqualTo
 import androidx.compose.ui.test.isDisplayed
 import androidx.compose.ui.test.isNotDisplayed
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
-import androidx.compose.ui.test.onRoot
-import androidx.compose.ui.test.performScrollToIndex
 import androidx.compose.ui.test.performTouchInput
-import androidx.compose.ui.test.printToLog
 import androidx.compose.ui.test.swipe
-import androidx.compose.ui.test.swipeDown
-import androidx.compose.ui.test.swipeUp
-import androidx.compose.ui.unit.dp
-import kotlinx.coroutines.delay
 import org.junit.Rule
 import org.junit.Test
 import starlightlab.jaehwa.lazyscroll.testtags.LAZY_LIST_STATE_TEST_TAG
@@ -79,7 +70,6 @@ class ScrollbarTest {
                 }
             }
         }
-
 
         val lazyListComponent = composeTestRule.onNodeWithTag(LAZY_LIST_STATE_TEST_TAG)
 
