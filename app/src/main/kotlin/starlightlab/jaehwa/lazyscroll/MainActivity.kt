@@ -60,7 +60,8 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun ScreenForTesting(
-    orientation: Orientation, modifier: Modifier = Modifier
+    orientation: Orientation,
+    modifier: Modifier = Modifier,
 ) {
     LazyListScrollbarHost(
         modifier =
