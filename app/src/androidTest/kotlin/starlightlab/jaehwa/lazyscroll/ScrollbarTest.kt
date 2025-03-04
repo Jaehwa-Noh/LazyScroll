@@ -110,7 +110,7 @@ class ScrollbarTest {
         val thumbComponent = composeTestRule.onNodeWithTag(THUMB_TEST_TAG)
         lazyListComponent
             .performTouchInput {
-                swipe(Offset(centerX, centerY), Offset(centerX, centerY - 500), 5_000L)
+                swipe(Offset(centerX, centerY), Offset(centerX, centerY - 1000), 1_000L)
                 advanceEventTime(100L)
             }
 
@@ -121,7 +121,7 @@ class ScrollbarTest {
         try {
             repeat(1000) {
                 thumbComponent.performTouchInput {
-                    swipe(Offset(centerX, centerY), Offset(centerX, (centerY - 1000f)), 1000)
+                    swipe(Offset(centerX, centerY), Offset(centerX, (centerY - 1000f)), 1_000L)
                     advanceEventTime(100L)
                 }
             }
