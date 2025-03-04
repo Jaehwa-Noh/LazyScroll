@@ -34,8 +34,10 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import starlightlab.jaehwa.lazyscroll.testtags.LAZY_LIST_STATE_TEST_TAG
 import starlightlab.jaehwa.lazyscroll.ui.theme.LazyScrollTheme
 import starlightlab.jaehwa.lazyscrollsdk.ui.LazyListScrollbarHost
 
@@ -69,14 +71,18 @@ fun ScreenForTesting(
         if (orientation == Orientation.Vertical) {
             LazyColumn(
                 state = lazyListState,
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier
+                    .testTag(LAZY_LIST_STATE_TEST_TAG)
+                    .fillMaxWidth(),
             ) {
                 createItems()
             }
         } else {
             LazyRow(
                 state = lazyListState,
-                modifier = Modifier.fillMaxHeight(),
+                modifier = Modifier
+                    .testTag(LAZY_LIST_STATE_TEST_TAG)
+                    .fillMaxHeight(),
             ) {
                 createItems()
             }
