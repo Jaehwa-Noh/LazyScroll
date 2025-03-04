@@ -39,7 +39,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Check spotless
-        id: spotless_check
+        id: spotless-check
         continue-on-error: true
         run: ./gradlew --init-script gradle/init.gradle.kts spotlessCheck --no-configuration-cache
 
@@ -49,14 +49,14 @@ jobs:
         run: echo "$STEPS_CONTEXT"
 
       - name: Apply spotless
-        id: spotless_apply
-        if: steps.spotless_check.outcome == 'failure' && github.event_name == 'pull_request' && ${{ !cancelled() }}
+        id: spotless-apply
+        if: steps.spotless-check.outcome == 'failure' && github.event_name == 'pull_request' && ${{ !cancelled() }}
         run: |
           ./gradlew --init-script gradle/init.gradle.kts spotlessApply --no-configuration-cache
 
       - name: Push new spotlessed file if available
         uses: stefanzweifel/git-auto-commit-action@v5
-        if: steps.spotless_apply.outcome == 'success'
+        if: steps.spotless-apply.outcome == 'success'
         with:
           file_pattern: '*/*.kt'
           disable_globbing: true
