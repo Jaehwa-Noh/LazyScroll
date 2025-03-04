@@ -74,7 +74,7 @@ internal fun LazyListScrollbarScreen(
     var visibilityState by remember { mutableStateOf(false) }
     val thumbSizePx = with(LocalDensity.current) { thumbSizeState.dp.toPx() }
 
-    LaunchedEffect(lazyListState, totalSizeState) {
+    LaunchedEffect(lazyListState) {
         combine(
             snapshotFlow {
                 lazyListState.layoutInfo.orientation
