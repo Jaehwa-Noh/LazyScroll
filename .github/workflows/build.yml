@@ -43,10 +43,10 @@ jobs:
         continue-on-error: true
         run: ./gradlew --init-script gradle/init.gradle.kts spotlessCheck --no-configuration-cache
 
-      - name: Dump GitHub Actions context
-        run: |
-          echo "Dumping context for debugging"
-          env
+      - name: Dump steps context
+        env:
+          STEPS_CONTEXT: ${{ toJson(steps) }}
+        run: echo "$STEPS_CONTEXT"
 
       - name: Apply spotless
         id: spotless_apply
