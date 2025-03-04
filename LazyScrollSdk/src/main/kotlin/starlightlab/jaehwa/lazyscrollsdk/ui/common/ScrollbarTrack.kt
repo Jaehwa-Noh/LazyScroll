@@ -21,6 +21,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.platform.testTag
+import starlightlab.jaehwa.lazyscrollsdk.testtags.THUMB_TRACK_TEST_TAG
 
 /**
  * Track for scrollbar
@@ -33,6 +35,7 @@ internal fun ScrollbarTrack(modifier: Modifier = Modifier) {
 
     Box(
         modifier
+            .testTag(THUMB_TRACK_TEST_TAG)
             .fillMaxSize()
             .drawBehind {
                 drawRect(
