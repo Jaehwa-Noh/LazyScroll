@@ -30,7 +30,9 @@ import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
+import starlightlab.jaehwa.lazyscrollsdk.testtags.THUMB_TEST_TAG
 
 /**
  * Actual Thumb
@@ -56,6 +58,7 @@ internal fun ScrollbarThumb(
     Box(
         modifier =
             modifier
+                .testTag(THUMB_TEST_TAG)
                 .graphicsLayer {
                     val offsetFloat =
                         when {
