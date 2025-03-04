@@ -50,7 +50,7 @@ jobs:
 
       - name: Apply spotless
         id: spotless-apply
-        if: steps.spotless-check.outcome == 'failure' && github.event_name == 'pull_request'
+        if: ${{ steps.spotless-check.outcome == 'failure' && github.event_name == 'pull_request' &&  !cancelled() }}
         run: |
           ./gradlew --init-script gradle/init.gradle.kts spotlessApply --no-configuration-cache
 
