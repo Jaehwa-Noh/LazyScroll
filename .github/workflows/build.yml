@@ -57,6 +57,11 @@ jobs:
           disable_globbing: true
           commit_message: "🤖 Apply spotless"
 
+      - name: Dump GitHub Actions context
+        run: |
+          echo "Dumping context for debugging"
+          env
+
       - name: Run build
         run: ./gradlew :app:assemble :LazyScrollSdk:assemble
 
